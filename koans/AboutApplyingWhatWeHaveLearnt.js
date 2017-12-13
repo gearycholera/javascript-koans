@@ -157,7 +157,28 @@ describe("About Applying What We Have Learnt", function() {
   });
 
   it("should find the smallest number divisible by each of the numbers 1 to 20", function () {
-      
+
+    function smallestDivisibleFromOneThroughTwenty () {
+      var answer = 0;
+      var i = 20;
+      var isFound = false;
+      while (!isFound) {
+        var isDivisible = true;
+        for (var j = 1; j <= 20; j++) {
+          if (i % j !== 0) {
+            isDivisible = false;
+          }
+        }
+        if (isDivisible) {
+          answer = i;
+          isFound = true;
+        }
+        i += 20;
+      }
+      return answer;
+    }
+
+    expect(smallestDivisibleFromOneThroughTwenty()).toBe(232792560)
     
   });
 
