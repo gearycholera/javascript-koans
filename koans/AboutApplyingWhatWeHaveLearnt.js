@@ -102,11 +102,35 @@ describe("About Applying What We Have Learnt", function() {
     expect(ingredientCount['mushrooms']).toBe(2);
   });
 
-  /*********************************************************************************/
-  /* UNCOMMENT FOR EXTRA CREDIT */
-  /*
+
   it("should find the largest prime factor of a composite number", function () {
-  
+
+    function isPrime(num) {
+      if (num < 2) { return false; }
+      var i = 2;
+      while (i <= Math.sqrt(num)) {
+        if (num % i === 0) { return false; }
+        i++;
+      }
+      return true;
+    }
+
+    function listFactors(num) {
+      var factors = [];
+      for (var i = 1; i <= num; i++) {
+        if (num % i === 0) {
+          factors.push(i);
+        }
+      }
+      return factors;
+    }
+
+    function largestPrimeFactor(num) {
+      return listFactors(num).filter(isPrime).pop();
+    }
+
+    expect(largestPrimeFactor(9007199)).toBe(991)
+
   });
 
   it("should find the largest palindrome made from the product of two 3 digit numbers", function () {
@@ -125,5 +149,5 @@ describe("About Applying What We Have Learnt", function() {
   it("should find the 10001st prime", function () {
 
   });
-  */
+
 });
