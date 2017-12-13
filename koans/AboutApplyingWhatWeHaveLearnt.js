@@ -102,6 +102,7 @@ describe("About Applying What We Have Learnt", function() {
     expect(ingredientCount['mushrooms']).toBe(2);
   });
 
+/*********************************************************************************/
 
   it("should find the largest prime factor of a composite number", function () {
 
@@ -133,6 +134,8 @@ describe("About Applying What We Have Learnt", function() {
 
   });
 
+  /*********************************************************************************/
+
   it("should find the largest palindrome made from the product of two 3 digit numbers", function () {
 
     function isPalindrome(string) {
@@ -155,6 +158,8 @@ describe("About Applying What We Have Learnt", function() {
     expect(threeDigitProductPalindrome()).toBe(906609);
 
   });
+
+  /*********************************************************************************/
 
   it("should find the smallest number divisible by each of the numbers 1 to 20", function () {
 
@@ -182,9 +187,30 @@ describe("About Applying What We Have Learnt", function() {
     
   });
 
+  /*********************************************************************************/
+
   it("should find the difference between the sum of the squares and the square of the sums", function () {
-    
+
+    function differenceSumsAndSquares(num) {
+      var numbers = [];
+      for (var i = 1 ; i <= num ; i++) {
+        numbers.push(i);
+      }
+      var sumOfSquares = numbers.reduce(function(acc, val){
+        return acc + Math.pow(val, 2);
+      })
+      var squareOfSums = Math.pow(numbers.reduce(function(acc, val){
+              return acc + val;
+            }), 2)
+
+      return squareOfSums - sumOfSquares;
+    }
+
+    expect(differenceSumsAndSquares(10)).toBe(2640)
+
   });
+
+  /*********************************************************************************/
 
   it("should find the 10001st prime", function () {
 
