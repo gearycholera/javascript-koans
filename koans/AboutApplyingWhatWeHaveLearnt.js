@@ -39,8 +39,8 @@ describe("About Applying What We Have Learnt", function() {
       var hasMushrooms = function(item) {
         return (item === 'mushrooms')
       }
-      productsICanEat = products.filter(function(pizza){
-        return (!pizza.containsNuts && !pizza.ingredients.some(hasMushrooms))
+      productsICanEat = products.filter(function(pizza) {
+        return (!pizza.containsNuts && !_(pizza.ingredients).any(hasMushrooms))
       })
 
       /* solve using filter() & all() / any() */
